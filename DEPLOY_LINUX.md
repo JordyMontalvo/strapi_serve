@@ -34,8 +34,8 @@ cat > .env << 'EOF'
 # Database Configuration
 DATABASE_CLIENT=postgres
 
-# Supabase Connection String
-DATABASE_URL=postgresql://postgres:jotamont1008@db.zckxyryyyybmiunpfgoj.supabase.co:5432/postgres
+# Supabase Connection Pooling (IPv4 compatible)
+DATABASE_URL=postgresql://postgres.zckxyryyyybmiunpfgoj:jotamont1008@aws-1-us-east-2.pooler.supabase.com:6543/postgres
 
 # SSL Configuration (requerido para Supabase)
 DATABASE_SSL=true

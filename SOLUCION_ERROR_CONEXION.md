@@ -26,15 +26,15 @@ nano .env
 # Database Configuration
 DATABASE_CLIENT=postgres
 
-# Supabase Connection (variables individuales - evita problemas con IPv6)
-DATABASE_HOST=db.zckxyryyyybmiunpfgoj.supabase.co
-DATABASE_PORT=5432
-DATABASE_NAME=postgres
-DATABASE_USERNAME=postgres
-DATABASE_PASSWORD=jotamont1008
+# Supabase Connection Pooling (IPv4 compatible - RECOMENDADO)
+DATABASE_URL=postgresql://postgres.zckxyryyyybmiunpfgoj:jotamont1008@aws-1-us-east-2.pooler.supabase.com:6543/postgres
 
-# Comentar o eliminar esta línea si usas variables individuales:
-# DATABASE_URL=postgresql://postgres:jotamont1008@db.zckxyryyyybmiunpfgoj.supabase.co:5432/postgres
+# Opción alternativa: Variables individuales (si prefieres no usar connection string)
+# DATABASE_HOST=aws-1-us-east-2.pooler.supabase.com
+# DATABASE_PORT=6543
+# DATABASE_NAME=postgres
+# DATABASE_USERNAME=postgres.zckxyryyyybmiunpfgoj
+# DATABASE_PASSWORD=jotamont1008
 
 # SSL Configuration
 DATABASE_SSL=true
