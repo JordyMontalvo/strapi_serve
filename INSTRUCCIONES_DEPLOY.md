@@ -40,8 +40,8 @@ chmod +x diagnostico-conexion.sh
 # Desarrollo
 npm run develop
 
-# O producción con PM2
-pm2 start npm --name "strapi" -- start
+# O con PM2 (usando develop)
+pm2 start npm --name "strapi" -- run develop
 pm2 logs strapi
 ```
 

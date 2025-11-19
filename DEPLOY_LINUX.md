@@ -101,8 +101,8 @@ npm run develop
 # Instalar PM2 globalmente si no lo tienes
 npm install -g pm2
 
-# Iniciar con PM2
-pm2 start npm --name "strapi" -- start
+# Iniciar con PM2 (usando develop)
+pm2 start npm --name "strapi" -- run develop
 
 # Ver logs
 pm2 logs strapi
