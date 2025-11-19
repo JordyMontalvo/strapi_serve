@@ -59,6 +59,12 @@ DATABASE_SCHEMA=public
 # App Keys (generadas automáticamente)
 APP_KEYS=eaHUZRoxZ/a44nu6RApacInHEPJJ+vO/e+erCXPhDNE=,KROxxTbF1GEnmPHdpb77MyhmoVPepbSATAM6sMtEvQs=,iL1tTWIGXaDgSsSHOZ2LvKsNBiuqOPnQ9YROpl2tLZU=,f805Cgved+Dekmja3mm6blcgAiU+EaCzpemwegV4kpA=
 
+# Strapi Admin & Security Keys (requeridas)
+ADMIN_JWT_SECRET=UUOR8/UTrYLgIl8YuL3cc9YzaMdtUo1PS8uR92isry0=
+API_TOKEN_SALT=OW8Shoh7bDg9uO5Syb7iGxlrBNlnZrXkk+TV1PLTz+4=
+TRANSFER_TOKEN_SALT=hgpkZC3hLV5O/1EpoaooEN6wSYx8zt1veQ9XsG7VfbY=
+ENCRYPTION_KEY=obHWqzav3sU6DYNmS7oSnzlWeoq2EvbsRvVlm6xES7Y=
+
 # Host and Port
 HOST=0.0.0.0
 PORT=1337
