@@ -46,8 +46,16 @@ cat > .env << 'ENVFILE'
 # Database Configuration
 DATABASE_CLIENT=postgres
 
-# Supabase Connection String
-DATABASE_URL=postgresql://postgres:jotamont1008@db.zckxyryyyybmiunpfgoj.supabase.co:5432/postgres
+# Supabase Connection (usar variables individuales para evitar problemas con IPv6)
+# Opción 1: Variables individuales (recomendado para evitar problemas de conectividad)
+DATABASE_HOST=db.zckxyryyyybmiunpfgoj.supabase.co
+DATABASE_PORT=5432
+DATABASE_NAME=postgres
+DATABASE_USERNAME=postgres
+DATABASE_PASSWORD=jotamont1008
+
+# Opción 2: Connection String (alternativa, comentada por defecto)
+# DATABASE_URL=postgresql://postgres:jotamont1008@db.zckxyryyyybmiunpfgoj.supabase.co:5432/postgres
 
 # SSL Configuration (requerido para Supabase)
 DATABASE_SSL=true
