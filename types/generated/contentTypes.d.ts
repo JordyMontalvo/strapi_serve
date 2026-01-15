@@ -561,7 +561,7 @@ export interface ApiSitiosRecomendadoSitiosRecomendado
   extends Struct.CollectionTypeSchema {
   collectionName: 'sitios_recomendados';
   info: {
-    displayName: 'sitios-recomendados';
+    displayName: 'sitios-recomendado';
     pluralName: 'sitios-recomendados';
     singularName: 'sitios-recomendado';
   };
@@ -573,14 +573,14 @@ export interface ApiSitiosRecomendadoSitiosRecomendado
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    iconType: Schema.Attribute.String;
+    icontype: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::sitios-recomendado.sitios-recomendado'
     > &
       Schema.Attribute.Private;
-    name: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
     orden: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;

@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sitios_recomendados",
+  "info": {
+    "singularName": "sitios-recomendado",
+    "pluralName": "sitios-recomendados",
+    "displayName": "sitios-recomendado"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "icontype": {
+      "type": "text"
+    },
+    "orden": {
+      "type": "integer"
+    }
+  }
+}
