@@ -495,6 +495,37 @@ export interface ApiContentContent extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiHeroBannerHeroBanner extends Struct.CollectionTypeSchema {
+  collectionName: 'hero_banners';
+  info: {
+    displayName: 'hero-banner';
+    pluralName: 'hero-banners';
+    singularName: 'hero-banner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imagenDesktop: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::hero-banner.hero-banner'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPreguntasFrecuentePreguntasFrecuente
   extends Struct.CollectionTypeSchema {
   collectionName: 'preguntas_frecuentes';
@@ -523,6 +554,39 @@ export interface ApiPreguntasFrecuentePreguntasFrecuente
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+  };
+}
+
+export interface ApiSitiosRecomendadoSitiosRecomendado
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'sitios_recomendados';
+  info: {
+    displayName: 'sitios-recomendados';
+    pluralName: 'sitios-recomendados';
+    singularName: 'sitios-recomendado';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.Text;
+    iconType: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::sitios-recomendado.sitios-recomendado'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.Text;
+    orden: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.Text;
   };
 }
 
@@ -1038,7 +1102,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::content.content': ApiContentContent;
+      'api::hero-banner.hero-banner': ApiHeroBannerHeroBanner;
       'api::preguntas-frecuente.preguntas-frecuente': ApiPreguntasFrecuentePreguntasFrecuente;
+      'api::sitios-recomendado.sitios-recomendado': ApiSitiosRecomendadoSitiosRecomendado;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
