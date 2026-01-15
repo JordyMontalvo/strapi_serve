@@ -7,6 +7,7 @@ export default (config: UserConfig) => {
       host: '0.0.0.0',
       allowedHosts: [
         'cmsbiblioteca.aiep.cl',
+        'cmsbibliotecatest.aiep.cl',
         '68.211.112.39',
         'localhost'
       ],
