@@ -573,7 +573,7 @@ export interface ApiSitiosRecomendadoSitiosRecomendado
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    icontype: Schema.Attribute.Text;
+    iconType: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

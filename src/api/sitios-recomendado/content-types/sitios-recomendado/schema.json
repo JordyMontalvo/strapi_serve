@@ -20,8 +20,8 @@
     "description": {
       "type": "text"
     },
-    "icontype": {
-      "type": "text"
+    "iconType": {
+      "type": "string"
     },
     "orden": {
       "type": "integer"
