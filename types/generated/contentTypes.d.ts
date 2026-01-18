@@ -526,6 +526,37 @@ export interface ApiHeroBannerHeroBanner extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiLibroLibro extends Struct.CollectionTypeSchema {
+  collectionName: 'libros';
+  info: {
+    displayName: 'libro';
+    pluralName: 'libros';
+    singularName: 'libro';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    autor: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    descripcion: Schema.Attribute.Text;
+    isbn: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::libro.libro'> &
+      Schema.Attribute.Private;
+    novedad: Schema.Attribute.Boolean;
+    orden: Schema.Attribute.Integer;
+    portada: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    publishedAt: Schema.Attribute.DateTime;
+    titulo: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPreguntasFrecuentePreguntasFrecuente
   extends Struct.CollectionTypeSchema {
   collectionName: 'preguntas_frecuentes';
@@ -1103,6 +1134,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::content.content': ApiContentContent;
       'api::hero-banner.hero-banner': ApiHeroBannerHeroBanner;
+      'api::libro.libro': ApiLibroLibro;
       'api::preguntas-frecuente.preguntas-frecuente': ApiPreguntasFrecuentePreguntasFrecuente;
       'api::sitios-recomendado.sitios-recomendado': ApiSitiosRecomendadoSitiosRecomendado;
       'plugin::content-releases.release': PluginContentReleasesRelease;
