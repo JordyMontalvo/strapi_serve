@@ -4,7 +4,7 @@
   "info": {
     "singularName": "libro",
     "pluralName": "libros",
-    "displayName": "libro"
+    "displayName": "novedades-literaria"
   },
   "options": {
     "draftAndPublish": true
@@ -38,6 +38,9 @@
     },
     "orden": {
       "type": "integer"
+    },
+    "url_reservar_libro": {
+      "type": "text"
     }
   }
 }

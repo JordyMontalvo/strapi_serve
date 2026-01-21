@@ -481,7 +481,6 @@ export interface ApiContentContent extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    descripcion: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -529,7 +528,7 @@ export interface ApiHeroBannerHeroBanner extends Struct.CollectionTypeSchema {
 export interface ApiLibroLibro extends Struct.CollectionTypeSchema {
   collectionName: 'libros';
   info: {
-    displayName: 'libro';
+    displayName: 'novedades-literaria';
     pluralName: 'libros';
     singularName: 'libro';
   };
@@ -554,6 +553,7 @@ export interface ApiLibroLibro extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    url_reservar_libro: Schema.Attribute.Text;
   };
 }
 
@@ -592,7 +592,7 @@ export interface ApiSitiosRecomendadoSitiosRecomendado
   extends Struct.CollectionTypeSchema {
   collectionName: 'sitios_recomendados';
   info: {
-    displayName: 'sitios-recomendado';
+    displayName: 'recursos-informacion';
     pluralName: 'sitios-recomendados';
     singularName: 'sitios-recomendado';
   };
