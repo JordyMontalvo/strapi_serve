@@ -9,8 +9,8 @@ export default [
       origin: [
         'https://portal-bibliotecatest.aiep.cl',
         'https://portal-biblioteca.aiep.cl',
-        'http://localhost:8080',
-        'http://localhost:3000',
+        // 'http://localhost:8080', // Solo para desarrollo local
+        // 'http://localhost:3000', // Solo para desarrollo local
       ],
       credentials: false, // Deshabilitar credentials para endpoints públicos
     },
