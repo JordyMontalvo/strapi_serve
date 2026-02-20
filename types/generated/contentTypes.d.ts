@@ -467,6 +467,48 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBibliotecaBiblioteca extends Struct.CollectionTypeSchema {
+  collectionName: 'bibliotecas';
+  info: {
+    displayName: 'bibliotecas';
+    pluralName: 'bibliotecas';
+    singularName: 'biblioteca';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    direccion: Schema.Attribute.String;
+    email: Schema.Attribute.Email;
+    horario_sabado: Schema.Attribute.Text;
+    horario_semana: Schema.Attribute.Text;
+    imagen: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::biblioteca.biblioteca'
+    > &
+      Schema.Attribute.Private;
+    nombre: Schema.Attribute.String;
+    orden: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    region: Schema.Attribute.Enumeration<
+      ['norte', 'centro-costa', 'metropolitana', 'sur']
+    >;
+    telefono: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url_mapa: Schema.Attribute.Text;
+  };
+}
+
 export interface ApiContentContent extends Struct.CollectionTypeSchema {
   collectionName: 'contents';
   info: {
@@ -1132,6 +1174,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::biblioteca.biblioteca': ApiBibliotecaBiblioteca;
       'api::content.content': ApiContentContent;
       'api::hero-banner.hero-banner': ApiHeroBannerHeroBanner;
       'api::libro.libro': ApiLibroLibro;
