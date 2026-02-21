@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bibliotecas",
+  "info": {
+    "singularName": "biblioteca",
+    "pluralName": "bibliotecas",
+    "displayName": "Biblioteca",
+    "description": "Bibliotecas AIEP a nivel nacional"
+  },
+  "options": {},
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string",
+      "required": true
+    },
+    "direccion": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "region": {
+      "type": "enumeration",
+      "enum": [
+        "metropolitana",
+        "norte",
+        "centro-costa",
+        "sur"
+      ],
+      "required": true
+    },
+    "url_mapa": {
+      "type": "string"
+    },
+    "horario_semana": {
+      "type": "string"
+    },
+    "horario_sabado": {
+      "type": "string"
+    },
+    "orden": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
